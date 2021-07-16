@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    This is vue project template.
+    <SampleComponent message="Sample Message" />
+    <VuexSampleComponent />
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 
-export default {
-  name: 'App',
+import { SampleComponent } from './components/sample';
+import { VuexSampleComponent } from './components/vuex-sample';
+
+@Component({
   components: {
-    HelloWorld
-  }
-}
+    SampleComponent,
+    VuexSampleComponent,
+  },
+})
+export default class App extends Vue {}
 </script>
 
-<style>
-#app {
+<style lang="scss">
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
